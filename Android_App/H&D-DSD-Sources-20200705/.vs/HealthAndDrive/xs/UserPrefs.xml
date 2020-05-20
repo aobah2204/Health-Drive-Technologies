@@ -1,0 +1,72 @@
+﻿<Properties StartupConfiguration="{21605EFC-C1B6-4592-B271-0DA901822CC8}|Default">
+  <MonoDevelop.Ide.ItemProperties.HealthAndDrive.Android AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" PreferredExecutionTarget="Android.Galaxy_Nexus_API_29" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="HealthAndDrive/ViewModels/AboutPageViewModel.cs">
+    <Files>
+      <File FileName="HealthAndDrive/Views/MainTabbedPage.xaml" Line="16" Column="12" IsPinned="True" />
+      <File FileName="NuGet.Config" />
+      <File FileName="HealthAndDrive/Models/Device.cs" Line="1" Column="1" />
+      <File FileName="HealthAndDrive/Protocol/BaseProtocol.cs" />
+      <File FileName="HealthAndDrive/Protocol/FreeStyleLibreUtils.cs" />
+      <File FileName="HealthAndDrive/Protocol/MiaoMiaoProtocol.cs" />
+      <File FileName="HealthAndDrive/Services/BluetoothScanService.cs" />
+      <File FileName="HealthAndDrive/Services/GlucoseService.cs" />
+      <File FileName="HealthAndDrive/Services/LeScanCallback.cs" />
+      <File FileName="HealthAndDrive/ViewModels/BluetoothPageViewModel.cs" />
+      <File FileName="HealthAndDrive/ViewModels/HiddenPageViewModel.cs" />
+      <File FileName="HealthAndDrive/ViewModels/HomePageViewModel.cs" />
+      <File FileName="../../../Library/Caches/VisualStudio/8.0/Symbols/mono/mono/c0c5c78e2bdbdbf7a70ae10b0a698708f1f2edbe/mcs/class/corlib/System.Diagnostics/Debugger.cs" />
+      <File FileName="../../../Library/Caches/VisualStudio/8.0/Symbols/mono/corefx/c30d255aec6b7de633d1c67b1a7f2ec121250359/src/Common/src/CoreLib/System/UnhandledExceptionEventArgs.cs" />
+      <File FileName="HealthAndDrive/App.xaml" />
+      <File FileName="HealthAndDrive/Views/HomePage.xaml" Line="32" Column="31" />
+      <File FileName="HealthAndDrive/Views/HomePage.xaml.cs" />
+      <File FileName="HealthAndDrive/Views/AboutPage.xaml" Line="1" Column="1" />
+      <File FileName="HealthAndDrive/Views/PrismNavigationPage.xaml" Line="1" Column="1" />
+      <File FileName="HealthAndDrive/Views/HiddenPage.xaml" />
+      <File FileName="HealthAndDrive/Views/ReportsPage.xaml" Line="1" Column="1" />
+      <File FileName="HealthAndDrive/Views/BluetoothPage.xaml" Line="1" Column="1" />
+      <File FileName="HealthAndDrive/Views/BluetoothPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="HealthAndDrive/Events/BluetoothStateChangeEvent.cs" Line="7" Column="6" />
+      <File FileName="HealthAndDrive/Events/InitMeasureServiceEvent.cs" Line="1" Column="1" />
+      <File FileName="HealthAndDrive/Events/MeasureChangeEvent.cs" Line="1" Column="1" />
+      <File FileName="HealthAndDrive/Models/ChartData.cs" Line="1" Column="1" />
+      <File FileName="HealthAndDrive/Models/CsvGlucoseMeasure.cs" Line="1" Column="1" />
+      <File FileName="HealthAndDrive/Models/DeviceType.cs" Line="9" Column="1" />
+      <File FileName="HealthAndDrive/Models/GlucoseMeasure.cs" Line="1" Column="1" />
+      <File FileName="HealthAndDrive/Models/HiddenHistoricalMeasure.cs" Line="1" Column="1" />
+      <File FileName="HealthAndDrive/Models/SensorState.cs" Line="1" Column="1" />
+      <File FileName="HealthAndDrive/ViewModels/ReportsPageViewModel.cs" Line="1" Column="1" />
+      <File FileName="HealthAndDrive/ViewModels/RootPageViewModel.cs" Line="1" Column="1" />
+      <File FileName="HealthAndDrive/ViewModels/SplashPageViewModel.cs" Line="1" Column="1" />
+      <File FileName="HealthAndDrive/ViewModels/AboutPageViewModel.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="HealthAndDrive" expanded="True">
+            <Node name="Solution Items" expanded="True" />
+            <Node name="HealthAndDrive" expanded="True">
+              <Node name="Controls" expanded="True" />
+              <Node name="Formatters" expanded="True" />
+              <Node name="Helpers" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Protocol" expanded="True" />
+              <Node name="Repositories" expanded="True" />
+              <Node name="ViewModels" expanded="True">
+                <Node name="AboutPageViewModel.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <Debugger.DebugSourceFolders>
+    <String>/Users/bahamadououry/Library/Caches/VisualStudio/8.0/Symbols/mono/corefx/c30d255aec6b7de633d1c67b1a7f2ec121250359</String>
+  </Debugger.DebugSourceFolders>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
