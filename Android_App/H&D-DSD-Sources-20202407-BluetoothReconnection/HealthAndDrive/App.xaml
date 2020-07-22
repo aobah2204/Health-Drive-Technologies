@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.DryIoc;assembly=Prism.DryIoc.Forms"
+             x:Class="HealthAndDrive.App"
+             xmlns:i18n="clr-namespace:Crossover.Bazarin.Languages;assembly=Crossover.Bazarin.Languages"
+             xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             xmlns:converters="clr-namespace:HealthAndDrive.Converters">
+    <Application.Resources>
+
+        <ResourceDictionary>
+            <converters:NegateBooleanConverter x:Key="negateBoolean" />
+			<converters:SelectedItemEventArgsToSelectedItemConverter x:Key="SelectedItemConverter" />
+			<converters:IntEntryToStringEntryConverter x:Key="IntEntryToStringEntry" />
+			<converters:FloatEntryToStringEntryConverter x:Key="FloatEntryToStringEntry" />
+			<converters:DateTimeOffsetToStringFormatConverter x:Key="DateTimeOffsetToStringFormat" />
+			<converters:MeasureTrendToImageStringConverter x:Key="MeasureTrendToImageString" />
+		</ResourceDictionary>
+
+        <!-- Fonts-->
+        <OnPlatform x:Key="Font_Regular" x:TypeArguments="x:String" Android="SFProDisplay-Regular.ttf#SFProDisplay-Regular"/>
+        <OnPlatform x:Key="Font_Bold" x:TypeArguments="x:String" Android="SFProDisplay-Bold.ttf#SFProDisplay-Bold"/>
+        <OnPlatform x:Key="Font_Medium" x:TypeArguments="x:String" Android="SFProDisplay-Medium.ttf#SFProDisplay-Medium"/>
+        <OnPlatform x:Key="Font_Light" x:TypeArguments="x:String" Android="SFProDisplay-Light.ttf#SFProDisplay-Light"/>
+        
+        <!-- Colors -->
+        <Color x:Key="MainBackgroundColor">#292f59</Color>
+        <Color x:Key="AltBackgroundColor">#FFFFFF</Color>
+        <Color x:Key="MainTextColor">#FFFFFF</Color>
+        <Color x:Key="MenuTextColor">#292f59</Color>
+		<Color x:Key="SubtitleTextColor">#8e92a5</Color>
+		<Color x:Key="MainSelectedColor">#ff633f</Color> <!-- Orange -->
+		<Color x:Key="ChartMaxValueColor">#DD1011</Color>
+		<Color x:Key="ChartMinValueColor">#61CF48</Color>
+		<Color x:Key="BoxColor">#3b3f63</Color>
+        <Color x:Key="WhiteTextColor">#FFFFFF</Color>
+        <Color x:Key="DarkGreyBlueColor">#292f59</Color>
+
+
+        <!-- Labels --> 
+        <Style x:Key="Default_Label" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource MainTextColor}" />
+            <Setter Property="FontFamily" Value="{DynamicResource Font_Regular}" />
+        </Style>
+
+        <Style x:Key="Default_Menu_Label" TargetType="Label" BasedOn="{StaticResource Default_Label}">
+            <Setter Property="FontSize" Value="Medium" />
+        </Style>
+
+        <Style x:Key="Default_Menu_Label_small" TargetType="Label" BasedOn="{StaticResource Default_Label}">
+            <Setter Property="FontSize" Value="11" />
+        </Style>
+
+        <Style x:Key="Default_Menu_Label_small_italic" TargetType="Label" BasedOn="{StaticResource Default_Label}">
+            <Setter Property="FontSize" Value="11" />
+            <Setter Property="FontAttributes" Value="Italic" />
+        </Style>
+
+        <Style x:Key="Default_Menu_Label_Disabled" TargetType="Label" BasedOn="{StaticResource Default_Label}">
+            <Setter Property="FontSize" Value="Medium" />
+            <Setter Property="TextColor" Value="{StaticResource SubtitleTextColor}" />
+        </Style>
+
+        <Style x:Key="Default_Title" TargetType="Label" BasedOn="{StaticResource Default_Label}">
+            <Setter Property="FontSize" Value="Large" />
+        </Style>
+
+        <Style x:Key="Default_SubTitle" TargetType="Label" BasedOn="{StaticResource Default_Label}">
+            <Setter Property="FontSize" Value="Small" />
+            <Setter Property="TextColor" Value="{StaticResource SubtitleTextColor}" />
+        </Style>
+
+		<Style x:Key="Default_Button_Label" TargetType="Label" BasedOn="{StaticResource Default_Label}">
+			<Setter Property="FontSize" Value="Small" />
+			<Setter Property="TextColor" Value="{StaticResource MainBackgroundColor}" />
+		</Style>
+		
+		<Style x:Key="Default_Button_Label_Bold" TargetType="Label" BasedOn="{StaticResource Default_Label}">
+			<Setter Property="FontSize" Value="Large" />
+			<Setter Property="TextColor" Value="{StaticResource MainBackgroundColor}" />
+		</Style>
+
+		<Style x:Key="Default_Frame_Text_Label_Light" TargetType="Label">
+			<Setter Property="FontFamily" Value="{StaticResource Font_Light}" />
+			<Setter Property="FontSize" Value="Medium" />
+			<Setter Property="TextColor" Value="{StaticResource MainTextColor}" />
+        </Style>
+
+        <Style x:Key="Default_Frame_Text_Label_UltraLight" TargetType="Label" BasedOn="{StaticResource Default_Frame_Text_Label_Light}">
+            <Setter Property="FontFamily" Value="{StaticResource Font_Light}" />
+            <Setter Property="FontSize" Value="Medium" />
+            <Setter Property="TextColor" Value="{StaticResource MainTextColor}" />
+            <Setter Property="Opacity" Value="0.5" />
+        </Style>
+
+        <Style x:Key="Default_Frame_Text_Label_Enhanced" TargetType="Label" BasedOn="{StaticResource Default_Frame_Text_Label_Light}">
+            <Setter Property="FontFamily" Value="{StaticResource Font_Medium}" />
+            <Setter Property="FontSize" Value="Medium" />
+            <Setter Property="TextColor" Value="{StaticResource MainSelectedColor}" />
+        </Style>
+
+        <Style x:Key="Default_Frame_Text_Label_Bold" TargetType="Label">
+			<Setter Property="FontFamily" Value="{StaticResource Font_Bold}" />
+			<Setter Property="TextColor" Value="{StaticResource MainTextColor}" />
+			<Setter Property="FontSize" Value="28" />
+		</Style>
+		
+		<Style x:Key="Default_Frame_Text_Entry_Bold_Blue" TargetType="Entry">
+			<Setter Property="FontFamily" Value="{StaticResource Font_Bold}" />
+			<Setter Property="TextColor" Value="{StaticResource MainBackgroundColor}" />
+			<Setter Property="FontAttributes" Value="Bold"/>
+		</Style>
+
+		<!-- Frames -->
+
+		<Style x:Key="Default_Transparent_Frame" TargetType="Frame">
+			<Setter Property="Opacity" Value="0.15" />
+			<Setter Property="BackgroundColor" Value="{StaticResource MainTextColor}" />
+			<Setter Property="CornerRadius" Value="10" />
+		</Style>
+
+    <Style x:Key="Drive_Title" TargetType="Label">
+      <Setter Property="FontSize" Value="25" />
+      <Setter Property="TextColor" Value="{StaticResource MainTextColor}" />
+      <Setter Property="FontFamily" Value="{DynamicResource Font_Bold}" />
+    </Style>
+
+    <Style x:Key="Drive_Text" TargetType="Label">
+      <Setter Property="FontSize" Value="18" />
+      <Setter Property="TextColor" Value="{StaticResource MainTextColor}" />
+      <Setter Property="FontFamily" Value="{DynamicResource Font_Light}" />
+    </Style>
+
+    <Style x:Key="Drive_Value_130" TargetType="Label">
+      <Setter Property="FontSize" Value="110" />
+      <Setter Property="TextColor" Value="{StaticResource MainTextColor}" />
+      <Setter Property="FontFamily" Value="{DynamicResource Font_Medium}" />
+    </Style>
+
+        <Style x:Key="Drive_Value_20" TargetType="Label">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="TextColor" Value="{StaticResource MainTextColor}" />
+            <Setter Property="FontFamily" Value="{DynamicResource Font_Medium}" />
+        </Style>
+
+        <Style x:Key="Home_Title" TargetType="Label">
+            <Setter Property="FontSize" Value="19" />
+            <Setter Property="TextColor" Value="{StaticResource MainTextColor}" />
+            <Setter Property="FontFamily" Value="{DynamicResource Font_Bold}" />
+        </Style>
+
+        <!-- General -->
+        <Style x:Key="Default_Page" TargetType="Page">
+            <Setter Property="BackgroundColor" Value="{StaticResource MainBackgroundColor}" />
+        </Style>
+
+        <!---Bluetooth page-->
+        <Style x:Key="Default_Box" TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="{StaticResource BoxColor}" />
+            <Setter Property="Margin" Value="20, 0" />
+        </Style>
+
+        <Style x:Key="Bluetooth_Box" TargetType="Frame" BasedOn="{StaticResource Default_Box}">
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="Margin" Value="20, 20, 20, 0" />
+        </Style>
+
+        <Style x:Key="Device_Box" TargetType="Frame" BasedOn="{StaticResource Bluetooth_Box}">
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="Margin" Value="20, 20, 20, 20" />
+            <Setter Property="HeightRequest" Value="150" />
+        </Style>
+
+        <Style  x:Key="CaourselViewControl_Default" TargetType="cv:CarouselViewControl">
+            <Setter Property="IndicatorsTintColor" Value="#808080" />
+            <Setter Property="CurrentPageIndicatorTintColor" Value="#C0C0C0" />
+        </Style>
+
+        <Style x:Key="Bluetooth_Circle_Default" TargetType="Frame">
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
+
+        <Style x:Key="Bluetooth_ScanningCircle_Growing" TargetType="Frame" BasedOn="{StaticResource Bluetooth_Circle_Default}">
+            <Setter Property="BorderColor" Value="{StaticResource MainSelectedColor}" />
+            <Setter Property="BackgroundColor" Value="{StaticResource DarkGreyBlueColor}" />
+            <Setter Property="Opacity" Value="1" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+        </Style>
+
+        <Style x:Key="Bluetooth_ScanningCircle_Fixed" TargetType="Frame" BasedOn="{StaticResource Bluetooth_Circle_Default}">
+            <Setter Property="CornerRadius" Value="50" />
+            <Setter Property="WidthRequest" Value="50" />
+            <Setter Property="HeightRequest" Value="50" />
+            <Setter Property="BorderColor" Value="{StaticResource MainSelectedColor}" />
+            <Setter Property="BackgroundColor" Value="White" />
+        </Style>
+
+        <Style x:Key="Bluetooth_ScanningImage" TargetType="Frame" BasedOn="{StaticResource Bluetooth_Circle_Default}">
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="WidthRequest" Value="50" />
+            <Setter Property="HeightRequest" Value="50" />
+        </Style>
+        
+
+        <!-- Bluetooth Labels -->
+        <Style x:Key="BlueToothLabel_Default" TargetType="Label">
+
+            <Setter Property="FontFamily" Value="SFProDisplay" /> 
+            <Setter Property="TextColor" Value="{StaticResource WhiteTextColor}" />
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+        </Style>
+
+        <Style x:Key="BlueToothLabel_Line1" TargetType="Label" BasedOn="{StaticResource BlueToothLabel_Default}">
+            <Setter Property="WidthRequest" Value="160" />
+            <Setter Property="FontSize" Value="25" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+
+        <Style x:Key="BlueToothLabel_Line2" TargetType="Label" BasedOn="{StaticResource BlueToothLabel_Default}">
+            <Setter Property="Margin" Value="0, 8, 0, 0" />
+            <!--<Setter Property="WidthRequest" Value="298" />-->
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontAttributes" Value="None" />
+        </Style>
+
+        <Style x:Key="TitleView_Text" TargetType="Label">
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="TextColor" Value="{StaticResource MainTextColor}" />
+            <Setter Property="FontFamily" Value="{DynamicResource Font_Bold}" />
+        </Style>
+
+        <Style x:Key="TabTitle_9" TargetType="Label">
+            <Setter Property="FontSize" Value="9" />
+            <Setter Property="TextColor" Value="{StaticResource MenuTextColor}" />
+            <Setter Property="FontFamily" Value="{DynamicResource Font_Medium}" />
+        </Style>
+
+        <Style x:Key="SplashTitle_20" TargetType="Label">
+            <Setter Property="FontSize" Value="25" />
+            <Setter Property="TextColor" Value="{StaticResource MenuTextColor}" />
+            <Setter Property="FontFamily" Value="{DynamicResource Font_Bold}" />
+        </Style>
+
+        <Style x:Key="SplashTitleOrange_20" TargetType="Label">
+            <Setter Property="FontSize" Value="30" />
+            <Setter Property="TextColor" Value="{StaticResource MainSelectedColor}" />
+            <Setter Property="FontFamily" Value="{DynamicResource Font_Bold}" />
+        </Style>
+
+        <Style x:Key="Bluetooth_DeviceLabelId" TargetType="Label" BasedOn="{StaticResource Default_Label}">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="TextColor" Value="{StaticResource WhiteTextColor}" />
+        </Style>
+
+        <Style x:Key="Bluetooth_DeviceLabelName" TargetType="Label" BasedOn="{StaticResource Default_Label}">
+            
+        </Style>
+
+        <Style x:Key="Bluetooth_ListTitle" TargetType="Label" BasedOn="{StaticResource Default_Frame_Text_Label_Light}">
+            <Setter Property="Margin" Value="20, 0, 0, 0" />
+        </Style>
+
+        <Style x:Key="Bluetooth_DeviceActionButton" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource WhiteTextColor}" />
+            <Setter Property="TextColor" Value="{StaticResource DarkGreyBlueColor}" />
+            <Setter Property="FontSize" Value="11" />
+            <Setter Property="FontFamily" Value="SFProDisplay" />
+            <Setter Property="WidthRequest" Value="100" />
+            <Setter Property="CornerRadius" Value="20" />
+        </Style>
+
+
+        <Style x:Key="Bluetooth_DeviceActionUnpair" TargetType="Button" BasedOn="{StaticResource Bluetooth_DeviceActionButton}">
+            <Setter Property="HorizontalOptions" Value="End" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="HeightRequest" Value="35" />
+        </Style>
+
+        <Style x:Key="Bluetooth_DeviceActionScan" TargetType="Button" BasedOn="{StaticResource Bluetooth_DeviceActionButton}">
+            <Setter Property="HeightRequest" Value="32"/>
+            <Setter Property="WidthRequest" Value="100" />
+            <Setter Property="HorizontalOptions" Value="End" />
+        </Style>
+
+        <Style x:Key="Hidden_Labels" TargetType="Label" BasedOn="{StaticResource Default_Label}">
+            <Setter Property="VerticalOptions" Value="End"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+        </Style>
+
+        <Style x:Key="Hidden_ColumTitle" TargetType="Label" BasedOn="{StaticResource Hidden_Labels}">
+            <Setter Property="TextColor" Value="{StaticResource SubtitleTextColor}" />
+            <Setter Property="FontSize" Value="13" />
+        </Style>
+
+        <Style x:Key="Hidden_ColumGlucoseValue" TargetType="Label" BasedOn="{StaticResource Hidden_Labels}">
+            <Setter Property="TextColor" Value="{StaticResource MainSelectedColor}" />
+            <Setter Property="FontFamily" Value="{StaticResource Font_Bold}" />
+            <Setter Property="FontSize" Value="35" />
+        </Style>
+
+        <Style x:Key="Hidden_ColumRawGlucoseValue" TargetType="Label" BasedOn="{StaticResource Hidden_ColumGlucoseValue}">
+            <Setter Property="TextColor" Value="{StaticResource SubtitleTextColor}" />
+            <Setter Property="FontSize" Value="30" />
+        </Style>
+
+        <Style x:Key="Hidden_ColumOffsetGlucoseValue" TargetType="Label" BasedOn="{StaticResource Hidden_ColumGlucoseValue}">
+            <Setter Property="TextColor" Value="{StaticResource MainTextColor}" />
+            <Setter Property="FontSize" Value="30" />
+        </Style>
+
+
+        <Style x:Key="Hidden_ColumDate" TargetType="Label" BasedOn="{StaticResource Hidden_Labels}">
+            <Setter Property="TextColor" Value="{StaticResource MainTextColor}" />
+            <Setter Property="FontAttributes" Value="Italic" />
+            <Setter Property="FontSize" Value="13" />
+
+        </Style>
+
+        <!-- 
+        -->
+       
+
+
+    </Application.Resources>
+
+</prism:PrismApplication>

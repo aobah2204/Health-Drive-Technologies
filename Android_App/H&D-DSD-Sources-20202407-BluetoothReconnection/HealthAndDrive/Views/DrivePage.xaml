@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i18n="clr-namespace:Crossover.Bazarin.Languages;assembly=Crossover.Bazarin.Languages"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:controls="clr-namespace:HealthAndDrive.Controls"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             Style="{DynamicResource Default_Page}"
+             x:Class="HealthAndDrive.Views.DrivePage"
+             IconImageSource="ic_conduite_off"
+             Title="{i18n:Translate Text=DrivePage_Title}">
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="65*"  />
+            <RowDefinition Height="35*" />
+        </Grid.RowDefinitions>
+
+        <!--Image de couleur du fond-->
+        <Image    Margin="0, 0, 0, 0" Grid.Row="0" VerticalOptions="StartAndExpand" MinimumWidthRequest="500" HorizontalOptions="Fill" Aspect="AspectFill" >
+            <Image.Triggers>
+                <DataTrigger TargetType="Image" Binding="{Binding IsLowValue}" Value="true">
+                    <Setter Property="Source" Value="bg_drive_rouge.png"/>
+                </DataTrigger>
+                <DataTrigger TargetType="Image" Binding="{Binding IsLow1Value}" Value="true">
+                    <Setter Property="Source" Value="bg_drive_orange.png"/>
+                </DataTrigger>
+                <DataTrigger TargetType="Image" Binding="{Binding IsLow2Value}" Value="true">
+                    <Setter Property="Source" Value="bg_drive_jaune.png"/>
+                </DataTrigger>
+                <DataTrigger TargetType="Image" Binding="{Binding IsNormalValue}" Value="true">
+                    <Setter Property="Source" Value="bg_drive_vert.png"/>
+                </DataTrigger>
+                <DataTrigger TargetType="Image" Binding="{Binding IsHigh1Value}" Value="true">
+                    <Setter Property="Source" Value="bg_drive_jaune.png"/>
+                </DataTrigger>
+                <DataTrigger TargetType="Image" Binding="{Binding IsHigh2Value}" Value="true">
+                    <Setter Property="Source" Value="bg_drive_orange.png"/>
+                </DataTrigger>
+                <DataTrigger TargetType="Image" Binding="{Binding IsHighValue}" Value="true">
+                    <Setter Property="Source" Value="bg_drive_rouge.png"/>
+                </DataTrigger>
+            </Image.Triggers>
+        </Image>
+
+        <StackLayout Grid.Row="0" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" >
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="50,0,0,0">
+                <!--Valeur-->
+				<Label Text="{Binding GlucoseValue}"
+					   Style="{DynamicResource Drive_Value_130}"
+					   HorizontalOptions="CenterAndExpand"
+					   Padding="0, 0, 0, 0"
+					   VerticalOptions="StartAndExpand">
+				</Label>
+                <!--flèche-->
+				<Image Source="{Binding CurrentTrend, Converter={StaticResource MeasureTrendToImageString}}"
+					   Margin="0,0,0,0"
+					   WidthRequest="50"
+					   HeightRequest="50">
+				</Image>
+            </StackLayout>
+
+			<!-- Last measure / Unit / Device battery -->
+			<StackLayout Orientation="Horizontal" Padding="20, 0, 20, 0">
+				<Grid>
+				    <Button HorizontalOptions="Center"
+						    Style="{DynamicResource Bluetooth_DeviceActionScan}"
+						    WidthRequest="100"
+							IsEnabled="False"
+							/>
+
+				    <Label Text="{Binding LastCheckedValueData, Converter={StaticResource DateTimeOffsetToStringFormat}}"
+					       HorizontalOptions="Center"
+					       VerticalOptions="Center"
+					       TextColor="{Binding DynamicLabelColor}">
+				    </Label>
+				</Grid>
+
+				<!--Unité-->
+				<Label Style="{DynamicResource Drive_Value_20}"
+					   Text="{i18n:Translate Text=DrivePage_Unity}"
+					   HorizontalOptions="CenterAndExpand"/>
+
+				<Grid>
+				    <Button HorizontalOptions="Center"
+						    Style="{DynamicResource Bluetooth_DeviceActionScan}"
+						    WidthRequest="100"
+							IsEnabled="False"/>
+
+				    <Label Text="{Binding CurrentDeviceBatteryLevel, StringFormat='BAT {0}%'}"
+					       HorizontalOptions="Center"
+					       VerticalOptions="Center"
+					       TextColor="{Binding DynamicLabelColor}">
+				    </Label>
+				</Grid>
+			</StackLayout>
+			
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"></ColumnDefinition>
+					<ColumnDefinition Width="*"></ColumnDefinition>
+					<ColumnDefinition Width="*"></ColumnDefinition>
+				</Grid.ColumnDefinitions>
+
+				
+			</Grid>
+
+			<!--Smiley-->
+            <Image Grid.RowSpan="2" WidthRequest="110" HeightRequest="110" Margin="0, 55, 0, 0" HorizontalOptions="Center" VerticalOptions="End">
+                
+                <Image.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding CallCommand}"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+
+                    <Image.Triggers>
+                    <DataTrigger TargetType="Image" Binding="{Binding IsLowValue}" Value="true">
+                        <Setter Property="Source" Value="ic_urgent_2.png"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Image" Binding="{Binding IsLow1Value}" Value="true">
+                        <Setter Property="Source" Value="ic_urgent_1.png"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Image" Binding="{Binding IsLow2Value}" Value="true">
+                        <Setter Property="Source" Value="ic_bad.png"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Image" Binding="{Binding IsNormalValue}" Value="true">
+                        <Setter Property="Source" Value="ic_happy.png"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Image" Binding="{Binding IsHigh1Value}" Value="true">
+                        <Setter Property="Source" Value="ic_bad.png"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Image" Binding="{Binding IsHigh2Value}" Value="true">
+                        <Setter Property="Source" Value="ic_urgent_1.png"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Image" Binding="{Binding IsHighValue}" Value="true">
+                        <Setter Property="Source" Value="ic_urgent_2.png"/>
+                    </DataTrigger>
+                </Image.Triggers>
+            </Image>
+            
+        </StackLayout>
+
+        
+
+        <!--Message en bas de l'écran-->
+        <StackLayout Padding="20, 0, 20, 20" Orientation="Vertical" HorizontalOptions="FillAndExpand" Grid.Row="1">
+            <Label Style="{DynamicResource Drive_Title}" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Padding="0, 0, 0, 10" >
+                <Label.Triggers>
+                    <DataTrigger TargetType="Label" Binding="{Binding IsLowValue}" Value="true">
+                        <Setter Property="Text" Value="{i18n:Translate Text=DrivePage_Stop}"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Label" Binding="{Binding IsLow1Value}" Value="true">
+                        <Setter Property="Text" Value="{i18n:Translate Text=DrivePage_HypoDetected}"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Label" Binding="{Binding IsLow2Value}" Value="true">
+                        <Setter Property="Text" Value="{i18n:Translate Text=DrivePage_HypoState}"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Label" Binding="{Binding IsNormalValue}" Value="true">
+                        <Setter Property="Text" Value="{i18n:Translate Text=DrivePage_GoodJourney}"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Label" Binding="{Binding IsHigh1Value}" Value="true">
+                        <Setter Property="Text" Value="{i18n:Translate Text=DrivePage_HyperState}"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Label" Binding="{Binding IsHigh2Value}" Value="true">
+                        <Setter Property="Text" Value="{i18n:Translate Text=DrivePage_HyperDetected}"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Label" Binding="{Binding IsHighValue}" Value="true">
+                        <Setter Property="Text" Value="{i18n:Translate Text=DrivePage_Stop}"/>
+                    </DataTrigger>
+                    <MultiTrigger TargetType="Label">
+                        <MultiTrigger.Conditions>
+                            <BindingCondition Binding="{Binding IsNotExtremValue}" Value="true" />
+                            <BindingCondition Binding="{Binding IsLowValue}" Value="false" />
+                            <BindingCondition Binding="{Binding IsHighValue}" Value="false" />
+                        </MultiTrigger.Conditions>
+                        <Setter Property="FontSize" Value="25"/>
+                    </MultiTrigger>
+                    <MultiTrigger TargetType="Label">
+                        <MultiTrigger.Conditions>
+                            <BindingCondition Binding="{Binding IsNotExtremValue}" Value="false" />
+                            <BindingCondition Binding="{Binding IsLowValue}" Value="true" />
+                            <BindingCondition Binding="{Binding IsHighValue}" Value="false" />
+                        </MultiTrigger.Conditions>
+                        <Setter Property="FontSize" Value="35"/>
+                    </MultiTrigger>
+                    <MultiTrigger TargetType="Label">
+                        <MultiTrigger.Conditions>
+                            <BindingCondition Binding="{Binding IsNotExtremValue}" Value="false" />
+                            <BindingCondition Binding="{Binding IsLowValue}" Value="false" />
+                            <BindingCondition Binding="{Binding IsHighValue}" Value="true" />
+                        </MultiTrigger.Conditions>
+                        <Setter Property="FontSize" Value="35"/>
+                    </MultiTrigger>
+                </Label.Triggers>
+            </Label>
+            <Label Style="{DynamicResource Drive_Text}" Text="" 
+                   HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center">
+                <Label.Triggers>
+                    <DataTrigger TargetType="Label" Binding="{Binding IsLowValue}" Value="true">
+                        <Setter Property="Text" Value="{i18n:Translate Text=DrivePage_HighLow_Text}"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Label" Binding="{Binding IsLow1Value}" Value="true">
+                        <Setter Property="Text" Value="{i18n:Translate Text=DrivePage_HypoHyperDetected_Text}"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Label" Binding="{Binding IsLow2Value}" Value="true">
+                        <Setter Property="Text" Value="{i18n:Translate Text=DrivePage_HypoHyperState_Text}"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Label" Binding="{Binding IsNormalValue}" Value="true">
+                        <Setter Property="Text" Value="{i18n:Translate Text=DrivePage_GoodJourney_Text}"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Label" Binding="{Binding IsHigh1Value}" Value="true">
+                        <Setter Property="Text" Value="{i18n:Translate Text=DrivePage_HypoHyperState_Text}"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Label" Binding="{Binding IsHigh2Value}" Value="true">
+                        <Setter Property="Text" Value="{i18n:Translate Text=DrivePage_HypoHyperDetected_Text}"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Label" Binding="{Binding IsHighValue}" Value="true">
+                        <Setter Property="Text" Value="{i18n:Translate Text=DrivePage_HighLow_Text}"/>
+                    </DataTrigger>
+                 </Label.Triggers>
+            </Label>
+        </StackLayout>
+
+    </Grid>
+</ContentPage>

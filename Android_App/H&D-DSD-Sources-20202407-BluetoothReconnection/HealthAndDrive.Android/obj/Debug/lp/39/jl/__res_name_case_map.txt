@@ -1,0 +1,2 @@
+Values/Strings.xml;values/strings.xml
+Layout/androidnativezoomview_scrollbars.xml;layout/androidnativezoomview_scrollbars.xml
