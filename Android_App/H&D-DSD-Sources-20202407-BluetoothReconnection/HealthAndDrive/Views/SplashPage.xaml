@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+			 xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 mc:Ignorable="d"
+			 x:Class="HealthAndDrive.Views.SplashPage">
+
+	<StackLayout VerticalOptions="FillAndExpand"
+				 HorizontalOptions="FillAndExpand">
+
+		<Grid
+			  VerticalOptions="FillAndExpand"
+			  RowSpacing="0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="15*" />
+				<RowDefinition Height="45*" />
+				<RowDefinition Height="10*" />
+				<RowDefinition Height="20*" />
+				<RowDefinition Height="10*" />
+			</Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Text="DIABETIC SAFE DRIVING" Style="{DynamicResource SplashTitle_20}" Opacity="0" x:Name="TitleSplash"
+                   HorizontalOptions="CenterAndExpand" Padding="0, 20, 0, 0" VerticalOptions="CenterAndExpand" />
+
+            <forms:AnimationView x:Name="splashAnim"
+								 Animation="SplashAnimShort.json"
+								 Grid.Row="1"
+								 Loop="False"
+								 VerticalOptions="FillAndExpand"
+								 HorizontalOptions="FillAndExpand"
+								 WidthRequest="600"
+								 HeightRequest="600"/>
+
+            <Label Grid.Row="2" Text="BY" Style="{DynamicResource SplashTitleOrange_20}" Opacity="0" x:Name="TitleSplashOrange"
+                   HorizontalOptions="CenterAndExpand" Padding="0, 0, 0, 0" VerticalOptions="CenterAndExpand" />
+            
+			<Image Grid.Row="3"
+				   HorizontalOptions="CenterAndExpand"
+				   BackgroundColor="#FAFAFA"
+				   x:Name="imgSplashLogo"
+				   Opacity="0"
+				   Source="logo_splash.png"
+				   Margin="0, 0, 0, 0"
+				   HeightRequest="110" />
+		</Grid>
+
+	</StackLayout>
+
+
+</ContentPage>

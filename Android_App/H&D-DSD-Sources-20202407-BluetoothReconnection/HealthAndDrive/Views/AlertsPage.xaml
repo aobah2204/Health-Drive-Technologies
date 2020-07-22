@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:i18n="clr-namespace:Crossover.Bazarin.Languages;assembly=Crossover.Bazarin.Languages"
+			 xmlns:prism="http://prismlibrary.com"
+			 xmlns:controls="clr-namespace:HealthAndDrive.Controls"
+			 prism:ViewModelLocator.AutowireViewModel="True"
+			 Style="{DynamicResource Default_Page}"
+			 x:Class="HealthAndDrive.Views.AlertsPage"
+			 IconImageSource="ic_alerte_off"
+			 Title="{i18n:Translate Text=AlertsPage_Title}">
+	
+	<Grid RowSpacing="20" >
+		<Grid.RowDefinitions>
+			<RowDefinition Height="170"></RowDefinition>
+			<RowDefinition Height="35"></RowDefinition>
+			<RowDefinition Height="100"></RowDefinition>
+			<RowDefinition Height="100"></RowDefinition>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"></ColumnDefinition>
+		</Grid.ColumnDefinitions>
+
+		<Grid Grid.Row="0" Margin="20, 18, 25, 2">
+			<Frame Style="{DynamicResource Default_Transparent_Frame}"
+				   HeightRequest="70">
+			</Frame>
+
+			<Grid RowSpacing="20">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="60"></RowDefinition>
+					<RowDefinition Height="60"></RowDefinition>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"></ColumnDefinition>
+				</Grid.ColumnDefinitions>
+				
+				<!-- Alerts -->
+				<Grid Grid.Row="0" Margin="0, 30, 0, 0">
+					<Label Text="{i18n:Translate AlertsPage_Alerts}"
+						   Style="{DynamicResource Default_Frame_Text_Label_Light}"
+						   VerticalOptions="Center"
+						   Margin="20, 0, 0, 0"/>
+					<Switch IsToggled="{Binding IsAlertActivated}"
+							VerticalOptions="Center"
+							HorizontalOptions="End"
+							ThumbColor="{DynamicResource MainTextColor}"
+							OnColor="{DynamicResource ChartMinValueColor}"
+							Margin="0, 0, 30, 0"
+							Scale="1.5" />
+				</Grid>
+				<!-- Widget -->
+				<Grid Grid.Row="1">
+					<Label Text="{i18n:Translate AlertsPage_Widget}"
+						   Style="{DynamicResource Default_Frame_Text_Label_Light}"
+						   VerticalOptions="Center"
+						   Margin="20, 0, 0, 0"/>
+
+					<Switch IsToggled="{Binding IsWidgetEnable}"
+							VerticalOptions="Center"
+							HorizontalOptions="End"
+							ThumbColor="{DynamicResource MainTextColor}"
+							OnColor="{DynamicResource ChartMinValueColor}"
+							Margin="0, 0, 30, 0"
+							Scale="1.5" />
+				</Grid>
+			</Grid>
+		</Grid>
+
+		<!-- Instruction -->
+		<Label Text="{i18n:Translate AlertsPage_EnterValues}"
+			   Style="{DynamicResource Default_Frame_Text_Label_Light}"
+			   VerticalTextAlignment="Center"
+			   VerticalOptions="CenterAndExpand"
+			   Grid.Row="1"
+			   Margin="20, 0, 0, 0"></Label>
+
+		<!-- Manage max treshold -->
+		<Grid Grid.Row="2" Margin="0, 0, 0, 1">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="50*"></RowDefinition>
+				<RowDefinition Height="50*"></RowDefinition>
+			</Grid.RowDefinitions>
+			<Image Source="misc_dash_line_red.png"
+				   VerticalOptions="Center"
+				   Scale="2"
+				   Grid.Row="1"></Image>
+			<Frame Style="{DynamicResource Default_Transparent_Frame}"
+				   Margin="20, 0, 25, 0"
+				   Grid.RowSpan="2"
+				   HeightRequest="70"></Frame>
+			<Grid Padding="40, 10, 35, 10"
+				  Grid.RowSpan="2">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="50*"></ColumnDefinition>
+					<ColumnDefinition Width="50*"></ColumnDefinition>
+				</Grid.ColumnDefinitions>
+				<Label Text="{i18n:Translate AlertsPage_MaxGlucose}"
+					   Style="{DynamicResource Default_Frame_Text_Label_Light}"
+					   VerticalOptions="Center"></Label>
+				<Frame CornerRadius="10"
+					   BackgroundColor="White"
+					   Grid.Column="1"
+					   Padding="0, 0, 0, 0">
+					<Grid ColumnSpacing="0">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="50*"></ColumnDefinition>
+							<ColumnDefinition Width="50*"></ColumnDefinition>
+						</Grid.ColumnDefinitions>
+						<controls:LinelessEntry  x:Name="MaxEntryFocused"
+												 Text="{Binding MaximumGlucoseTreshold, Converter={StaticResource IntEntryToStringEntry}}"
+												 HorizontalTextAlignment="End"
+												 VerticalOptions="Center"
+												 FontFamily="{StaticResource Font_Bold}"
+												 FontSize="Large"
+												 TextColor="{StaticResource MainBackgroundColor}"
+												 Keyboard="Numeric"
+												 MaxLength="3"
+												 Grid.Column="0">
+							<controls:LinelessEntry.Triggers>
+								<DataTrigger TargetType="controls:LinelessEntry"
+											 Binding="{Binding FocusValueMax}"
+											 Value="MaxFocused">
+									<Setter Property="TextColor"
+											Value="{DynamicResource MainTextColor}"></Setter>
+								</DataTrigger>
+							</controls:LinelessEntry.Triggers>
+							<controls:LinelessEntry.Behaviors>
+								<prism:EventToCommandBehavior EventName="Unfocused"
+															  Command="{Binding UnfocusMaxCommand}" />
+							</controls:LinelessEntry.Behaviors>
+						</controls:LinelessEntry>
+						<Label Text="mg/dl"
+							   FontFamily="{StaticResource Font_Bold}"
+							   FontSize="Large"
+							   VerticalTextAlignment="Center"
+							   HorizontalTextAlignment="Start"
+							   TextColor="{StaticResource MainBackgroundColor}"
+							   Grid.Column="1">
+							<Label.Triggers>
+								<DataTrigger TargetType="Label"
+											 Binding="{Binding FocusValueMax}"
+											 Value="MaxFocused">
+									<Setter Property="TextColor"
+											Value="{StaticResource MainTextColor}" />
+								</DataTrigger>
+							</Label.Triggers>
+						</Label>
+					</Grid>
+					<Frame.Triggers>
+						<DataTrigger TargetType="Frame"
+									 Binding="{Binding FocusValueMax}"
+									 Value="MaxFocused">
+							<Setter Property="BackgroundColor"
+									Value="{DynamicResource MainSelectedColor}" />
+						</DataTrigger>
+					</Frame.Triggers>
+				</Frame>
+				<!-- Max focused hack -->
+				<Frame CornerRadius="10"
+					   BackgroundColor="Transparent"
+					   Grid.Column="1"
+					   Padding="0, 0, 0, 0">
+					<Frame.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding FocusMaxGlucoseCommand}"></TapGestureRecognizer>
+					</Frame.GestureRecognizers>
+				</Frame>
+			</Grid>
+		</Grid>
+
+		<!-- Manage min treshold -->
+		<Grid Grid.Row="3" Margin="0, 1, 0, 0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="50*"></RowDefinition>
+				<RowDefinition Height="50*"></RowDefinition>
+			</Grid.RowDefinitions>
+			<Image Source="misc_dash_line_green.png"
+				   VerticalOptions="Center"
+				   Scale="2"
+				   Grid.Row="0"></Image>
+			<Frame Style="{DynamicResource Default_Transparent_Frame}"
+				   Margin="20, 0, 25, 0"
+				   Grid.RowSpan="2"
+				   HeightRequest="70">
+			</Frame>
+			<Grid Padding="40, 10, 35, 10"
+				  Grid.RowSpan="2">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="50*"></ColumnDefinition>
+					<ColumnDefinition Width="50*"></ColumnDefinition>
+				</Grid.ColumnDefinitions>
+				<Label Text="{i18n:Translate AlertsPage_MinGlucose}"
+					   Style="{DynamicResource Default_Frame_Text_Label_Light}"
+					   VerticalOptions="Center"></Label>
+				<Frame CornerRadius="10"
+					   BackgroundColor="White"
+					   Padding="0"
+					   Grid.Column="1">
+					<Grid ColumnSpacing="0">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="50*"></ColumnDefinition>
+							<ColumnDefinition Width="50*"></ColumnDefinition>
+						</Grid.ColumnDefinitions>
+						<controls:LinelessEntry x:Name="MinEntryFocused"
+												Text="{Binding MinimumGlucoseTreshold, Converter={StaticResource IntEntryToStringEntry}}"
+												HorizontalTextAlignment="End"
+												VerticalOptions="Center"
+												FontFamily="{StaticResource Font_Bold}"
+												FontSize="Large"
+												TextColor="{StaticResource MainBackgroundColor}"
+												Keyboard="Numeric"
+												Grid.Column="0"
+												MaxLength="3">
+							<controls:LinelessEntry.Triggers>
+								<DataTrigger TargetType="controls:LinelessEntry"
+											 Binding="{Binding FocusValueMin}"
+											 Value="MinFocused">
+									<Setter Property="TextColor"
+											Value="{DynamicResource MainTextColor}"></Setter>
+								</DataTrigger>
+							</controls:LinelessEntry.Triggers>
+							<controls:LinelessEntry.Behaviors>
+								<prism:EventToCommandBehavior EventName="Unfocused"
+															  Command="{Binding UnfocusMinCommand}"/>
+							</controls:LinelessEntry.Behaviors>
+						</controls:LinelessEntry>
+						<Label Text="mg/dl"
+							   FontFamily="{StaticResource Font_Bold}"
+							   FontSize="Large"
+							   VerticalTextAlignment="Center"
+							   HorizontalTextAlignment="Start"
+							   TextColor="{StaticResource MainBackgroundColor}"
+							   Grid.Column="1">
+							<Label.Triggers>
+								<DataTrigger TargetType="Label"
+											 Binding="{Binding FocusValueMin}"
+											 Value="MinFocused">
+									<Setter Property="TextColor"
+											Value="{StaticResource MainTextColor}" />
+								</DataTrigger>
+							</Label.Triggers>
+						</Label>
+					</Grid>
+					<Frame.Triggers>
+						<DataTrigger TargetType="Frame"
+									 Binding="{Binding FocusValueMin}"
+									 Value="MinFocused">
+							<Setter Property="BackgroundColor"
+									Value="{DynamicResource MainSelectedColor}" />
+						</DataTrigger>
+					</Frame.Triggers>
+				</Frame>
+				<!-- Min focused hack -->
+				<Frame CornerRadius="10"
+					   BackgroundColor="Transparent"
+					   Grid.Column="1"
+					   Padding="0, 0, 0, 0">
+					<Frame.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding FocusMinGlucoseCommand}"></TapGestureRecognizer>
+					</Frame.GestureRecognizers>
+				</Frame>
+			</Grid>
+		</Grid>
+	</Grid>
+</ContentPage>
