@@ -1,12 +1,13 @@
 ﻿<Properties StartupConfiguration="{21605EFC-C1B6-4592-B271-0DA901822CC8}|Default">
   <MonoDevelop.Ide.ItemProperties.HealthAndDrive.Android AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" PreferredExecutionTarget="Android.R58N311DBLM" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="HealthAndDrive.Android/Services/MeasureService.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="HealthAndDrive/App.xaml.cs">
     <Files>
-      <File FileName="HealthAndDrive/Protocol/MiaoMiaoProtocol.cs" Line="250" Column="63" />
-      <File FileName="HealthAndDrive/Services/BluetoothScanService.cs" Line="46" Column="95" />
-      <File FileName="HealthAndDrive/ViewModels/HiddenPageViewModel.cs" Line="131" Column="18" />
-      <File FileName="HealthAndDrive/ViewModels/BluetoothPageViewModel.cs" Line="696" Column="38" />
-      <File FileName="HealthAndDrive.Android/Services/MeasureService.cs" Line="1" Column="1" />
+      <File FileName="HealthAndDrive.Android/Services/MeasureService.cs" Line="764" Column="1" />
+      <File FileName="HealthAndDrive/Repositories/GlucoseMeasureRepository.cs" Line="1" Column="1" />
+      <File FileName="HealthAndDrive/ViewModels/HiddenPageViewModel.cs" Line="236" Column="86" />
+      <File FileName="HealthAndDrive/Protocol/MiaoMiaoProtocol.cs" Line="1" Column="1" />
+      <File FileName="HealthAndDrive/App.xaml" Line="1" Column="1" />
+      <File FileName="HealthAndDrive/App.xaml.cs" Line="35" Column="67" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -19,11 +20,12 @@
               <Node name="Services" expanded="True" />
               <Node name="Tools" expanded="True" />
               <Node name="ViewModels" expanded="True" />
+              <Node name="App.xaml" expanded="True">
+                <Node name="App.xaml.cs" selected="True" />
+              </Node>
             </Node>
             <Node name="HealthAndDrive.Android" expanded="True">
-              <Node name="Services" expanded="True">
-                <Node name="MeasureService.cs" selected="True" />
-              </Node>
+              <Node name="Services" expanded="True" />
             </Node>
           </Node>
         </State>

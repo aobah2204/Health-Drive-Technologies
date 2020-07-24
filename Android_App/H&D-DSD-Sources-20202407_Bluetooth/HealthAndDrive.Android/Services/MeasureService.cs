@@ -760,15 +760,15 @@ namespace HealthAndDrive.Droid.Services
             {
                 Log.Debug(LOG_TAG, "!!!!!!!!------------- In ReconnectionBluetooth Fonction -------------------!!!!!!");
                 this.TestlastNotificationMeasure = new NotificationMeasure();
-                this.TestlastNotificationMeasure.NotificationMeasureDate = new DateTimeOffset(2020,07,24,9,39,0, new TimeSpan(2, 0, 0));
+                this.TestlastNotificationMeasure.NotificationMeasureDate = new DateTimeOffset(2020,07,24,15,22,0, new TimeSpan(-2,0,0));
 
                 // Show values
                 Log.Debug(LOG_TAG, $"Last Notification Measure = {this.TestlastNotificationMeasure.NotificationMeasureDate} -------------------!!!!!! ");
 
-                Log.Debug(LOG_TAG, $"Now time = {DateTimeOffset.Now} -------------------!!!!!! ");
+                Log.Debug(LOG_TAG, $"Now time = {DateTimeOffset.UtcNow} -------------------!!!!!! ");
 
                 // Check the age of the last measure
-                Temp = DateTimeOffset.Now - TestlastNotificationMeasure.NotificationMeasureDate;
+                Temp = DateTimeOffset.UtcNow - TestlastNotificationMeasure.NotificationMeasureDate;
                 Log.Debug(LOG_TAG, $"Age = {Temp} -------------------!!!!!! ");
 
 
@@ -789,12 +789,12 @@ namespace HealthAndDrive.Droid.Services
                 if( this.lastNotificationMeasure != null )
                 {
                     // Check the age of the last measure
-                    Temp = DateTimeOffset.Now - this.lastNotificationMeasure.NotificationMeasureDate;
-                    gapTimeInSeconde = Temp.TotalSeconds;
+                    this.Temp = DateTimeOffset.Now - this.lastNotificationMeasure.NotificationMeasureDate;
+                    this.gapTimeInSeconde = this.Temp.TotalSeconds;
 
                     // Check the age of the last measure
                     // if most than 15 minutes reconnect the last device
-                    if(gapTimeInSeconde >= this.appSettings.RetryBluetoothDelay)
+                    if(this.gapTimeInSeconde >= this.appSettings.RetryBluetoothDelay)
                     {
                         // Publish event Reconnection Bluetooth
                         this.eventAggregator.GetEvent<ReconnectBluetoothEvent>().Publish("");

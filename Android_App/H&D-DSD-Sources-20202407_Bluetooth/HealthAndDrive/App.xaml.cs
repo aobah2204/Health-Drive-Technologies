@@ -32,7 +32,7 @@ namespace HealthAndDrive
         /// <summary>
         /// The App Center Secret for DSD app
         /// </summary>
-        private const string APP_CENTER_DSD_APPSECRET = "android=19803b85-7149-41ba-af04-369fa9f13b79;";
+        private const string APP_CENTER_DSD_APPSECRET = "android=c34d983e-4afb-4ad0-ab02-98b918d9a47c;";
 
         /// <summary>
         /// Needed for navigation through notifications
