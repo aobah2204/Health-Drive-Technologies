@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "s+3NoZxtuvA+5oy0GN90DjKQ93XkNCA1fAJ9B0ZwE5XB9by6oIENxhTeRWu41e5CB1KPnlumE3Jsz54Wkj/4xQ==",
+  "dgSpecHash": "NcrAaz7HgANb8qh8RG0n0mn0Os0dzp8KQvLUBLqqVcFleXfwkLyGfsfOK2NAdtfH7Rozcur3r5VNw3JQDMcJMw==",
   "success": true,
-  "projectFilePath": "/Users/bahamadououry/Desktop/Health_Drive/H&D-DSD-Sources-20200705/HealthAndDrive/HealthAndDrive.csproj",
+  "projectFilePath": "/Users/bahamadououry/Desktop/Health_Drive/GitHub/Health-Drive-Technoligies/Android_App/H&D-DSD-Sources-20202407_Bluetooth/HealthAndDrive/HealthAndDrive.csproj",
   "expectedPackageFiles": [
     "/Users/bahamadououry/.nuget/packages/acr.userdialogs/6.2.4/acr.userdialogs.6.2.4.nupkg.sha512",
     "/Users/bahamadououry/.nuget/packages/carouselview.formsplugin/5.2.0/carouselview.formsplugin.5.2.0.nupkg.sha512",

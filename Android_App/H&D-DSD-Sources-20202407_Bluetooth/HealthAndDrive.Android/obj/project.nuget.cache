@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DGJnFz19vgJk3LUEWedudvjhQf8cGF6H/SMxPgQcV4MeagGmbB4/QIQfAp3CUCeQ/2WfvqL8CmkBRu7bajUsVA==",
+  "dgSpecHash": "bWPlP7cmSsCzeJX8aYK6YDpv+3VF4JiCkas6rHTthaiti0kLU1LSUO1aG5j0aR7Un6wKQ6oKukm3ZbSDGYXmhw==",
   "success": true,
-  "projectFilePath": "/Users/bahamadououry/Desktop/Health_Drive/H&D-DSD-Sources-20200705/HealthAndDrive.Android/HealthAndDrive.Android.csproj",
+  "projectFilePath": "/Users/bahamadououry/Desktop/Health_Drive/GitHub/Health-Drive-Technoligies/Android_App/H&D-DSD-Sources-20202407_Bluetooth/HealthAndDrive.Android/HealthAndDrive.Android.csproj",
   "expectedPackageFiles": [
     "/Users/bahamadououry/.nuget/packages/acr.support/2.1.0/acr.support.2.1.0.nupkg.sha512",
     "/Users/bahamadououry/.nuget/packages/acr.userdialogs/6.2.4/acr.userdialogs.6.2.4.nupkg.sha512",

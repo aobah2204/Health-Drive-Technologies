@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:i18n="clr-namespace:Crossover.Bazarin.Languages;assembly=Crossover.Bazarin.Languages"
+			 xmlns:prism="http://prismlibrary.com"
+			 prism:ViewModelLocator.AutowireViewModel="True"
+			 xmlns:controls="clr-namespace:HealthAndDrive.Controls"
+			 Style="{DynamicResource Default_Page}"
+			 x:Class="HealthAndDrive.Views.HiddenPage"
+			 Title="{i18n:Translate Text=HiddenPage_Title}">
+
+	<NavigationPage.TitleView>
+		<Grid VerticalOptions="FillAndExpand"
+			  HorizontalOptions="FillAndExpand"
+			  Margin="0, 0, 15, 0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="40"></RowDefinition>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"></ColumnDefinition>
+			</Grid.ColumnDefinitions>
+			<Label Text="{i18n:Translate Text=HiddenPage_Title}"
+				   Padding="0,0,15,0"
+				   MinimumWidthRequest="150"
+				   HorizontalOptions="FillAndExpand"
+				   HorizontalTextAlignment="Center"
+				   VerticalOptions="Center"
+				   Style="{DynamicResource TitleView_Text}"
+				   Grid.Row="0"
+				   Grid.Column="0"
+				   LineBreakMode="NoWrap"></Label>
+		</Grid>
+	</NavigationPage.TitleView>
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="250" />
+                <RowDefinition Height="280" />
+                <RowDefinition Height="500" />
+            </Grid.RowDefinitions>
+            <Frame  Style="{DynamicResource Bluetooth_Box}"
+					Grid.Row="0">
+                <Grid>
+                    <StackLayout>
+                        <Label Text="{i18n:Translate HiddenPage_LoadHistoricalTitle}"
+							   Style="{DynamicResource BlueToothLabel_Line1}"
+							   Margin="0, 0, 0, 0"
+							   HeightRequest="50" />
+                        <Label Text="{i18n:Translate HiddenPage_LoadHistoricalMessage}"
+							   Style="{DynamicResource BlueToothLabel_Line2}"
+							   Margin="0, 0, 0, 0" />
+
+                        <Button HorizontalOptions="Center"
+								Style="{DynamicResource Bluetooth_DeviceActionScan}"
+								Text="{i18n:Translate Text=HiddenPage_LoadHistoricalDataInTheZoneBtn}"
+								Command="{Binding LoadHistoricalDataInTheZoneCommand}"
+								WidthRequest="250"
+								Margin="0, 10, 0, 10" />
+
+                        <Button HorizontalOptions="Center"
+								Style="{DynamicResource Bluetooth_DeviceActionScan}"
+								Text="{i18n:Translate Text=HiddenPage_LoadHistoricalDataNotInTheZoneBtn}"
+								Command="{Binding LoadHistoricalDataNotInTheZoneCommand}"
+								WidthRequest="250" />
+
+                    </StackLayout>
+
+                </Grid>
+            </Frame>
+
+            <Frame  Style="{DynamicResource Bluetooth_Box}"
+					Grid.Row="1">
+                <Grid>
+                    <StackLayout>
+                        <Label Text="{i18n:Translate HiddenPage_SimulateMeasurelTitle}"
+							   Style="{DynamicResource BlueToothLabel_Line1}"
+							   Margin="0, 0, 0, 0"
+							   HeightRequest="50" />
+                        <Label Text="{i18n:Translate HiddenPage_SimulateMeasureMessage}"
+							   Style="{DynamicResource BlueToothLabel_Line2}"
+							   Margin="0, 0, 0, 0" />
+
+                        <Grid Grid.Row="3">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="35*"></RowDefinition>
+                                <RowDefinition Height="35*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Frame Style="{DynamicResource Default_Transparent_Frame}"
+								   Margin="20, 0, 20, 0"
+								   Grid.RowSpan="2"
+								   HeightRequest="35">
+                            </Frame>
+                            <Grid Padding="40, 10, 30, 10"
+								  Grid.RowSpan="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40*"></ColumnDefinition>
+                                    <ColumnDefinition Width="60*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{i18n:Translate HiddenPage_SimulateValue}"
+									   Style="{DynamicResource Default_Frame_Text_Label_Light}"
+									   VerticalOptions="Center">
+                                </Label>
+                                <Frame CornerRadius="10"
+									   BackgroundColor="White"
+									   Padding="0"
+									   Grid.Column="1">
+                                    <Grid ColumnSpacing="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="50*"></ColumnDefinition>
+                                            <ColumnDefinition Width="50*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <controls:LinelessEntry Text="{Binding SimulationMeasureValue}"
+																HorizontalTextAlignment="End"
+																VerticalOptions="Center"
+																FontFamily="{StaticResource Font_Bold}"
+																FontSize="Large"
+																TextColor="{StaticResource MainBackgroundColor}"
+																Keyboard="Numeric"
+																MaxLength="3"
+																Grid.Column="0">
+                                        </controls:LinelessEntry>
+                                        <Label Text="mg/dl"
+											   FontFamily="{StaticResource Font_Bold}"
+											   FontSize="Large"
+											   VerticalTextAlignment="Center"
+											   HorizontalTextAlignment="Start"
+											   TextColor="{StaticResource MainBackgroundColor}"
+											   Grid.Column="1"></Label>
+                                    </Grid>
+                                </Frame>
+                            </Grid>
+                        </Grid>
+                        <Button HorizontalOptions="Center"
+								Style="{DynamicResource Bluetooth_DeviceActionScan}"
+								Text="{i18n:Translate Text=HiddenPage_SimulateMeasureBtn}"
+								Command="{Binding SimulateMeasureValueCommand}"
+								WidthRequest="150" />
+                    </StackLayout>
+
+                </Grid>
+            </Frame>
+
+            <Frame  Style="{DynamicResource Bluetooth_Box}"
+					Grid.Row="2">
+                <Grid>
+                    <StackLayout>
+                        <Label Text="{i18n:Translate HiddenPage_HistoricTitle}"
+							   Style="{DynamicResource BlueToothLabel_Line1}"
+							   Margin="0, 0, 0, 0"
+							   HeightRequest="60" />
+                        <Label Text="{i18n:Translate HiddenPage_HistoricMessage}"
+							   Style="{DynamicResource BlueToothLabel_Line2}"
+							   Margin="0, 0, 0, 0" />
+
+                        <ListView RowHeight="125" SelectionMode="None" ItemsSource="{Binding LastMeasures}" Margin="0, 30, 0, 0">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid Padding="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="30*" />
+                                                <ColumnDefinition Width="30*" />
+                                                <ColumnDefinition Width="30*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label Grid.Row="0" Grid.ColumnSpan="3"
+                                               Style="{DynamicResource Hidden_ColumDate}"
+                                               Text="{Binding RealDateTimeOffset}" 
+                                                   FontSize="13" FontAttributes="Italic"/>
+                                            
+                                            <Label Grid.Row="1"  Grid.Column="0" 
+                                                Style="{DynamicResource Hidden_ColumTitle}"
+                                                Text="{i18n:Translate HiddenPage_HistoricColumnDSDValue}" />
+                                            <Label Grid.Row="1"  Grid.Column="1"
+                                               Style="{DynamicResource Hidden_ColumTitle}"
+                                                   Text="{i18n:Translate HiddenPage_HistoricSensorValue}" />
+                                            <Label Grid.Row="1" Grid.Column="2"
+                                               Style="{DynamicResource Hidden_ColumTitle}"
+                                                   Text="{i18n:Translate HiddenPage_HistoricOffsetValue}" />
+                                            <Label 
+                                                   Grid.Row="2" Grid.Column="0"
+                                                   Style="{DynamicResource Hidden_ColumGlucoseValue}"
+                                                   HeightRequest="60"
+                                                   Text="{Binding GlucoseLevelMGDL}" />
+
+                                            <Label Grid.Row="2" Grid.Column="1"
+                                                   Style="{DynamicResource Hidden_ColumRawGlucoseValue}"
+                                                   HeightRequest="60" 
+                                                   Text="{Binding RawGlucoseLevelMGDL}" />
+
+                                            <Label Grid.Row="2" Grid.Column="2"
+                                                   Style="{DynamicResource Hidden_ColumOffsetGlucoseValue}"
+                                                   HeightRequest="60"
+                                                   Text="{Binding CalibrationOffset}" />
+
+
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+        </Grid>
+    </ScrollView>
+</ContentPage>

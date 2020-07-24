@@ -1,0 +1,256 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/bahamadououry/Desktop/Health_Drive/GitHub/Health-Drive-Technoligies/Android_App/H&D-DSD-Sources-20200705/HealthAndDrive.Android/HealthAndDrive.Android.csproj": {}
+  },
+  "projects": {
+    "/Users/bahamadououry/Desktop/Health_Drive/GitHub/Health-Drive-Technoligies/Android_App/H&D-DSD-Sources-20200705/HealthAndDrive.Android/HealthAndDrive.Android.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/bahamadououry/Desktop/Health_Drive/GitHub/Health-Drive-Technoligies/Android_App/H&D-DSD-Sources-20200705/HealthAndDrive.Android/HealthAndDrive.Android.csproj",
+        "projectName": "HealthAndDrive.Android",
+        "projectPath": "/Users/bahamadououry/Desktop/Health_Drive/GitHub/Health-Drive-Technoligies/Android_App/H&D-DSD-Sources-20200705/HealthAndDrive.Android/HealthAndDrive.Android.csproj",
+        "packagesPath": "/Users/bahamadououry/.nuget/packages/",
+        "outputPath": "/Users/bahamadououry/Desktop/Health_Drive/GitHub/Health-Drive-Technoligies/Android_App/H&D-DSD-Sources-20200705/HealthAndDrive.Android/obj/",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "/Users/bahamadououry/Desktop/Health_Drive/GitHub/Health-Drive-Technoligies/Android_App/H&D-DSD-Sources-20200705/NuGet.Config",
+          "/Users/bahamadououry/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "monoandroid90"
+        ],
+        "sources": {
+          "/Users/bahamadououry/Desktop/Health_Drive/CustomNuggets_07052020/Nuggets": {},
+          "/Users/bahamadououry/Desktop/Health_Drive/CustomNuggets_07052020/Nuggets": {},
+          "/Users/bahamadououry/Desktop/Health_Drive/CustomNuggets_07052020/Nuggets": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "monoandroid90": {
+            "projectReferences": {
+              "/Users/bahamadououry/Desktop/Health_Drive/GitHub/Health-Drive-Technoligies/Android_App/H&D-DSD-Sources-20200705/HealthAndDrive/HealthAndDrive.csproj": {
+                "projectPath": "/Users/bahamadououry/Desktop/Health_Drive/GitHub/Health-Drive-Technoligies/Android_App/H&D-DSD-Sources-20200705/HealthAndDrive/HealthAndDrive.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "monoandroid90": {
+          "dependencies": {
+            "CarouselView.FormsPlugin": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Com.Airbnb.Xamarin.Forms.Lottie": {
+              "target": "Package",
+              "version": "[3.0.3, )"
+            },
+            "Crossover.Bazarin.Permissions": {
+              "target": "Package",
+              "version": "[1.0.7, )"
+            },
+            "Microsoft.AppCenter.Analytics": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.AppCenter.Crashes": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Plugin.UserDialogs": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "Prism.DryIoc.Forms": {
+              "target": "Package",
+              "version": "[7.2.0.1422, )"
+            },
+            "Realm": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "Telerik.UI.for.Xamarin": {
+              "target": "Package",
+              "version": "[2019.3.1119.1, )"
+            },
+            "Telerik.UI.for.Xamarin.Chart": {
+              "target": "Package",
+              "version": "[2019.3.1119.1, )"
+            },
+            "Telerik.UI.for.Xamarin.Documents.SpreadsheetStreaming": {
+              "target": "Package",
+              "version": "[2019.3.1021, )"
+            },
+            "Xamarin.Android.Support.CustomTabs": {
+              "target": "Package",
+              "version": "[28.0.0.3, )"
+            },
+            "Xamarin.Android.Support.Design": {
+              "target": "Package",
+              "version": "[28.0.0.3, )"
+            },
+            "Xamarin.Android.Support.v4": {
+              "target": "Package",
+              "version": "[28.0.0.3, )"
+            },
+            "Xamarin.Android.Support.v7.AppCompat": {
+              "target": "Package",
+              "version": "[28.0.0.3, )"
+            },
+            "Xamarin.Android.Support.v7.CardView": {
+              "target": "Package",
+              "version": "[28.0.0.3, )"
+            },
+            "Xamarin.Android.Support.v7.MediaRouter": {
+              "target": "Package",
+              "version": "[28.0.0.3, )"
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.3.1, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[4.3.0.991211, )"
+            }
+          }
+        }
+      }
+    },
+    "/Users/bahamadououry/Desktop/Health_Drive/GitHub/Health-Drive-Technoligies/Android_App/H&D-DSD-Sources-20200705/HealthAndDrive/HealthAndDrive.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/bahamadououry/Desktop/Health_Drive/GitHub/Health-Drive-Technoligies/Android_App/H&D-DSD-Sources-20200705/HealthAndDrive/HealthAndDrive.csproj",
+        "projectName": "HealthAndDrive",
+        "projectPath": "/Users/bahamadououry/Desktop/Health_Drive/GitHub/Health-Drive-Technoligies/Android_App/H&D-DSD-Sources-20200705/HealthAndDrive/HealthAndDrive.csproj",
+        "packagesPath": "/Users/bahamadououry/.nuget/packages/",
+        "outputPath": "/Users/bahamadououry/Desktop/Health_Drive/GitHub/Health-Drive-Technoligies/Android_App/H&D-DSD-Sources-20200705/HealthAndDrive/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/bahamadououry/Desktop/Health_Drive/GitHub/Health-Drive-Technoligies/Android_App/H&D-DSD-Sources-20200705/NuGet.Config",
+          "/Users/bahamadououry/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "/Users/bahamadououry/Desktop/Health_Drive/CustomNuggets_07052020/Nuggets": {},
+          "/Users/bahamadououry/Desktop/Health_Drive/CustomNuggets_07052020/Nuggets": {},
+          "/Users/bahamadououry/Desktop/Health_Drive/CustomNuggets_07052020/Nuggets": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "CarouselView.FormsPlugin": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Com.Airbnb.Xamarin.Forms.Lottie": {
+              "target": "Package",
+              "version": "[3.0.3, )"
+            },
+            "Crossover.Bazarin.Languages": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
+            "Crossover.Bazarin.Permissions": {
+              "target": "Package",
+              "version": "[1.0.7, )"
+            },
+            "Crossover.Bazarin.PrismLib": {
+              "target": "Package",
+              "version": "[2.0.1, )"
+            },
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[12.2.3, )"
+            },
+            "DocumentFormat.OpenXml": {
+              "target": "Package",
+              "version": "[2.9.1, )"
+            },
+            "Microsoft.AppCenter.Analytics": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.AppCenter.Crashes": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Plugin.BLE": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "Plugin.UserDialogs": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "Prism.DryIoc.Forms": {
+              "target": "Package",
+              "version": "[7.2.0.1422, )"
+            },
+            "Realm": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "Telerik.UI.for.Xamarin": {
+              "target": "Package",
+              "version": "[2019.3.1119.1, )"
+            },
+            "Telerik.UI.for.Xamarin.Chart": {
+              "target": "Package",
+              "version": "[2019.3.1119.1, )"
+            },
+            "Telerik.UI.for.Xamarin.Documents.SpreadsheetStreaming": {
+              "target": "Package",
+              "version": "[2019.3.1021, )"
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.3.1, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[4.3.0.991211, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.302/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

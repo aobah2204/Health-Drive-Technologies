@@ -2,15 +2,11 @@
   <MonoDevelop.Ide.ItemProperties.HealthAndDrive.Android AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" PreferredExecutionTarget="Android.R58N311DBLM" />
   <MonoDevelop.Ide.Workbench ActiveDocument="HealthAndDrive.Android/Services/MeasureService.cs">
     <Files>
-      <File FileName="HealthAndDrive.Android/Services/MeasureService.cs" Line="771" Column="97" />
-      <File FileName="HealthAndDrive.Android/MainActivity.cs" Line="36" Column="23" />
-      <File FileName="HealthAndDrive/Tools/AppSettings.cs" Line="39" Column="47" />
-      <File FileName="HealthAndDrive/Protocol/MiaoMiaoProtocol.cs" Line="318" Column="33" />
-      <File FileName="HealthAndDrive/Models/GlucoseMeasure.cs" Line="36" Column="26" />
-      <File FileName="../../../Library/Caches/VisualStudio/8.0/Symbols/mono/mono/165f4b03417a1e18c8c6db3d93a7a4916d77488a/mcs/class/referencesource/mscorlib/system/runtime/exceptionservices/exceptionservicescommon.cs" Line="157" Column="1" />
-      <File FileName="HealthAndDrive/HealthAndDrive.csproj" Line="1" Column="1" />
-      <File FileName="HealthAndDrive.Android/Services/MeasureWidgetService.cs" Line="39" Column="26" />
-      <File FileName="../../../Library/Caches/VisualStudio/8.0/Symbols/mono/mono/165f4b03417a1e18c8c6db3d93a7a4916d77488a/mcs/class/corlib/System.Diagnostics/Debugger.cs" Line="125" Column="1" />
+      <File FileName="HealthAndDrive/Protocol/MiaoMiaoProtocol.cs" Line="250" Column="63" />
+      <File FileName="HealthAndDrive/Services/BluetoothScanService.cs" Line="46" Column="95" />
+      <File FileName="HealthAndDrive/ViewModels/HiddenPageViewModel.cs" Line="131" Column="18" />
+      <File FileName="HealthAndDrive/ViewModels/BluetoothPageViewModel.cs" Line="696" Column="38" />
+      <File FileName="HealthAndDrive.Android/Services/MeasureService.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,7 +16,9 @@
               <Node name="Models" expanded="True" />
               <Node name="Protocol" expanded="True" />
               <Node name="Repositories" expanded="True" />
+              <Node name="Services" expanded="True" />
               <Node name="Tools" expanded="True" />
+              <Node name="ViewModels" expanded="True" />
             </Node>
             <Node name="HealthAndDrive.Android" expanded="True">
               <Node name="Services" expanded="True">

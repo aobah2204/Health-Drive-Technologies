@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+			xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			xmlns:prism="http://prismlibrary.com"
+			xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+			prism:ViewModelLocator.AutowireViewModel="True"
+			xmlns:local="clr-namespace:HealthAndDrive.Views"
+			xmlns:i18n="clr-namespace:Crossover.Bazarin.Languages;assembly=Crossover.Bazarin.Languages"
+			Style="{DynamicResource Default_Page}"
+			x:Class="HealthAndDrive.Views.MainTabbedPage"
+			android:TabbedPage.ToolbarPlacement="Bottom"
+			android:TabbedPage.IsSwipePagingEnabled="False"
+			BarBackgroundColor="{DynamicResource AltBackgroundColor}"
+			BarTextColor="{DynamicResource MainSelectedColor}" 
+			UnselectedTabColor="{DynamicResource MainBackgroundColor}"
+			android:TabbedPage.BarSelectedItemColor="{DynamicResource MainSelectedColor}">
+
+	<NavigationPage.TitleView>
+		<Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0, 0, 15, 0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="40" ></RowDefinition>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="90*"></ColumnDefinition>
+				<ColumnDefinition Width="10*"></ColumnDefinition>
+			</Grid.ColumnDefinitions>
+
+			<Label Text="{Binding Title}" Padding="0,0,15,0" MinimumWidthRequest="150" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalOptions="Center" Style="{DynamicResource TitleView_Text}" Grid.Row="0" Grid.Column="0" LineBreakMode="NoWrap"></Label>
+			<Image HeightRequest="23" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Grid.Row="0" Grid.Column="1">
+                <Image.Triggers>
+                    <DataTrigger TargetType="Image" Binding="{Binding CurrentUser.IsAlert}" Value="true">
+                        <Setter Property="Source" Value="ic_alerte_on_white.png"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Image" Binding="{Binding CurrentUser.IsAlert}" Value="false">
+                        <Setter Property="Source" Value="ic_alerte_off_white.png"/>
+                    </DataTrigger>
+                </Image.Triggers>
+				<Image.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding AlertsCommand}"></TapGestureRecognizer>
+				</Image.GestureRecognizers>
+            </Image>
+
+		</Grid>
+	</NavigationPage.TitleView>
+
+	<TabbedPage.Children>
+		<!--<local:HomePage></local:HomePage>-->
+        <local:DrivePage IconImageSource="ic_conduite_off" Title="{i18n:Translate Text=DrivePage_Title}"></local:DrivePage>
+        <local:AlertsPage IconImageSource="ic_alerte_off" Title="{i18n:Translate Text=AlertsPage_Title}"></local:AlertsPage>
+        <local:ReportsPage IconImageSource="ic_statistics_off" Title="{i18n:Translate Text=ReportsPage_Title}"></local:ReportsPage>
+        <local:BluetoothPage IconImageSource="ic_bluetooth_off" Title="{i18n:Translate Text=BluetoothPage_Title}"></local:BluetoothPage>
+	</TabbedPage.Children>
+</TabbedPage>
