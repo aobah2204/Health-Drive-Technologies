@@ -1,29 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/Users/bahamadououry/Desktop/Health_Drive/H&D-DSD-Sources-20200705/HealthAndDrive/HealthAndDrive.csproj": {}
+    "/Users/bahamadououry/Desktop/Health_Drive/GitHub/Health-Drive-Technoligies/Android_App/H&D-DSD-Sources-20200705/HealthAndDrive/HealthAndDrive.csproj": {}
   },
   "projects": {
-    "/Users/bahamadououry/Desktop/Health_Drive/H&D-DSD-Sources-20200705/HealthAndDrive/HealthAndDrive.csproj": {
+    "/Users/bahamadououry/Desktop/Health_Drive/GitHub/Health-Drive-Technoligies/Android_App/H&D-DSD-Sources-20200705/HealthAndDrive/HealthAndDrive.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/bahamadououry/Desktop/Health_Drive/H&D-DSD-Sources-20200705/HealthAndDrive/HealthAndDrive.csproj",
+        "projectUniqueName": "/Users/bahamadououry/Desktop/Health_Drive/GitHub/Health-Drive-Technoligies/Android_App/H&D-DSD-Sources-20200705/HealthAndDrive/HealthAndDrive.csproj",
         "projectName": "HealthAndDrive",
-        "projectPath": "/Users/bahamadououry/Desktop/Health_Drive/H&D-DSD-Sources-20200705/HealthAndDrive/HealthAndDrive.csproj",
+        "projectPath": "/Users/bahamadououry/Desktop/Health_Drive/GitHub/Health-Drive-Technoligies/Android_App/H&D-DSD-Sources-20200705/HealthAndDrive/HealthAndDrive.csproj",
         "packagesPath": "/Users/bahamadououry/.nuget/packages/",
-        "outputPath": "/Users/bahamadououry/Desktop/Health_Drive/H&D-DSD-Sources-20200705/HealthAndDrive/obj/",
+        "outputPath": "/Users/bahamadououry/Desktop/Health_Drive/GitHub/Health-Drive-Technoligies/Android_App/H&D-DSD-Sources-20200705/HealthAndDrive/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/Users/bahamadououry/Desktop/Health_Drive/H&D-DSD-Sources-20200705/NuGet.Config",
+          "/Users/bahamadououry/Desktop/Health_Drive/GitHub/Health-Drive-Technoligies/Android_App/H&D-DSD-Sources-20200705/NuGet.Config",
           "/Users/bahamadououry/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
+          "/Users/bahamadououry/Desktop/Health_Drive/CustomNuggets_07052020/Nuggets": {},
+          "/Users/bahamadououry/Desktop/Health_Drive/CustomNuggets_07052020/Nuggets": {},
           "/Users/bahamadououry/Desktop/Health_Drive/CustomNuggets_07052020/Nuggets": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -130,7 +132,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.202/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.302/RuntimeIdentifierGraph.json"
         }
       }
     }

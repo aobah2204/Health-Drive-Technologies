@@ -4445,15 +4445,15 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/bahamadououry/Desktop/Health_Drive/H&D-DSD-Sources-20200705/HealthAndDrive.Android/HealthAndDrive.Android.csproj",
+      "projectUniqueName": "/Users/bahamadououry/Desktop/Health_Drive/GitHub/Health-Drive-Technoligies/Android_App/H&D-DSD-Sources-20200705/HealthAndDrive.Android/HealthAndDrive.Android.csproj",
       "projectName": "HealthAndDrive.Android",
-      "projectPath": "/Users/bahamadououry/Desktop/Health_Drive/H&D-DSD-Sources-20200705/HealthAndDrive.Android/HealthAndDrive.Android.csproj",
+      "projectPath": "/Users/bahamadououry/Desktop/Health_Drive/GitHub/Health-Drive-Technoligies/Android_App/H&D-DSD-Sources-20200705/HealthAndDrive.Android/HealthAndDrive.Android.csproj",
       "packagesPath": "/Users/bahamadououry/.nuget/packages/",
-      "outputPath": "/Users/bahamadououry/Desktop/Health_Drive/H&D-DSD-Sources-20200705/HealthAndDrive.Android/obj/",
+      "outputPath": "/Users/bahamadououry/Desktop/Health_Drive/GitHub/Health-Drive-Technoligies/Android_App/H&D-DSD-Sources-20200705/HealthAndDrive.Android/obj/",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "/Users/bahamadououry/Desktop/Health_Drive/H&D-DSD-Sources-20200705/NuGet.Config",
+        "/Users/bahamadououry/Desktop/Health_Drive/GitHub/Health-Drive-Technoligies/Android_App/H&D-DSD-Sources-20200705/NuGet.Config",
         "/Users/bahamadououry/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
@@ -4466,8 +4466,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "/Users/bahamadououry/Desktop/Health_Drive/H&D-DSD-Sources-20200705/HealthAndDrive/HealthAndDrive.csproj": {
-              "projectPath": "/Users/bahamadououry/Desktop/Health_Drive/H&D-DSD-Sources-20200705/HealthAndDrive/HealthAndDrive.csproj"
+            "/Users/bahamadououry/Desktop/Health_Drive/GitHub/Health-Drive-Technoligies/Android_App/H&D-DSD-Sources-20200705/HealthAndDrive/HealthAndDrive.csproj": {
+              "projectPath": "/Users/bahamadououry/Desktop/Health_Drive/GitHub/Health-Drive-Technoligies/Android_App/H&D-DSD-Sources-20200705/HealthAndDrive/HealthAndDrive.csproj"
             }
           }
         }
