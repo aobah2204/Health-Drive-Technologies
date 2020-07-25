@@ -40,14 +40,6 @@ public class AutoCompleteListView
 	}
 
 
-	public AutoCompleteListView (android.content.Context p0, android.util.AttributeSet p1, int p2, int p3)
-	{
-		super (p0, p1, p2, p3);
-		if (getClass () == AutoCompleteListView.class)
-			mono.android.TypeManager.Activate ("Telerik.XamarinForms.InputRenderer.Android.AutoCompleteListView, Telerik.XamarinForms.Input", "Android.Content.Context, Mono.Android:Android.Util.IAttributeSet, Mono.Android:System.Int32, mscorlib:System.Int32, mscorlib", this, new java.lang.Object[] { p0, p1, p2, p3 });
-	}
-
-
 	public boolean hasWindowFocus ()
 	{
 		return n_hasWindowFocus ();

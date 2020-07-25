@@ -41,14 +41,6 @@ public class AndroidNativeZoomView_ScalableLayout
 	}
 
 
-	public AndroidNativeZoomView_ScalableLayout (android.content.Context p0, android.util.AttributeSet p1, int p2, int p3)
-	{
-		super (p0, p1, p2, p3);
-		if (getClass () == AndroidNativeZoomView_ScalableLayout.class)
-			mono.android.TypeManager.Activate ("Telerik.XamarinForms.PrimitivesRenderer.Android.AndroidNativeZoomView+ScalableLayout, Telerik.XamarinForms.Primitives", "Android.Content.Context, Mono.Android:Android.Util.IAttributeSet, Mono.Android:System.Int32, mscorlib:System.Int32, mscorlib", this, new java.lang.Object[] { p0, p1, p2, p3 });
-	}
-
-
 	public void onMeasure (int p0, int p1)
 	{
 		n_onMeasure (p0, p1);

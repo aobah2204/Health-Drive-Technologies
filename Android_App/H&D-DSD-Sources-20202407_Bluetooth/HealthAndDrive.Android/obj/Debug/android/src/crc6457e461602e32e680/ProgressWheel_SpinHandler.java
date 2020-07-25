@@ -24,27 +24,11 @@ public class ProgressWheel_SpinHandler
 	}
 
 
-	public ProgressWheel_SpinHandler (android.os.Handler.Callback p0)
-	{
-		super (p0);
-		if (getClass () == ProgressWheel_SpinHandler.class)
-			mono.android.TypeManager.Activate ("AndroidHUD.ProgressWheel+SpinHandler, AndHUD", "Android.OS.Handler+ICallback, Mono.Android", this, new java.lang.Object[] { p0 });
-	}
-
-
 	public ProgressWheel_SpinHandler (android.os.Looper p0)
 	{
 		super (p0);
 		if (getClass () == ProgressWheel_SpinHandler.class)
 			mono.android.TypeManager.Activate ("AndroidHUD.ProgressWheel+SpinHandler, AndHUD", "Android.OS.Looper, Mono.Android", this, new java.lang.Object[] { p0 });
-	}
-
-
-	public ProgressWheel_SpinHandler (android.os.Looper p0, android.os.Handler.Callback p1)
-	{
-		super (p0, p1);
-		if (getClass () == ProgressWheel_SpinHandler.class)
-			mono.android.TypeManager.Activate ("AndroidHUD.ProgressWheel+SpinHandler, AndHUD", "Android.OS.Looper, Mono.Android:Android.OS.Handler+ICallback, Mono.Android", this, new java.lang.Object[] { p0, p1 });
 	}
 
 

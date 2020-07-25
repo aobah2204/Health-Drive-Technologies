@@ -760,7 +760,7 @@ namespace HealthAndDrive.Droid.Services
             {
                 Log.Debug(LOG_TAG, "!!!!!!!!------------- In ReconnectionBluetooth Fonction -------------------!!!!!!");
                 this.TestlastNotificationMeasure = new NotificationMeasure();
-                this.TestlastNotificationMeasure.NotificationMeasureDate = new DateTimeOffset(2020,07,24,15,22,0, new TimeSpan(-2,0,0));
+                this.TestlastNotificationMeasure.NotificationMeasureDate = new DateTimeOffset(2020,07,24,15,22,0, new TimeSpan(2,0,0));
 
                 // Show values
                 Log.Debug(LOG_TAG, $"Last Notification Measure = {this.TestlastNotificationMeasure.NotificationMeasureDate} -------------------!!!!!! ");

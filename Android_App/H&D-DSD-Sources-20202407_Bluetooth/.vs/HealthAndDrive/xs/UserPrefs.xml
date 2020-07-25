@@ -1,31 +1,21 @@
 ﻿<Properties StartupConfiguration="{21605EFC-C1B6-4592-B271-0DA901822CC8}|Default">
   <MonoDevelop.Ide.ItemProperties.HealthAndDrive.Android AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" PreferredExecutionTarget="Android.R58N311DBLM" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="HealthAndDrive/App.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="NuGet.Config">
     <Files>
       <File FileName="HealthAndDrive.Android/Services/MeasureService.cs" Line="764" Column="1" />
       <File FileName="HealthAndDrive/Repositories/GlucoseMeasureRepository.cs" Line="1" Column="1" />
       <File FileName="HealthAndDrive/ViewModels/HiddenPageViewModel.cs" Line="236" Column="86" />
       <File FileName="HealthAndDrive/Protocol/MiaoMiaoProtocol.cs" Line="1" Column="1" />
       <File FileName="HealthAndDrive/App.xaml" Line="1" Column="1" />
-      <File FileName="HealthAndDrive/App.xaml.cs" Line="35" Column="67" />
+      <File FileName="HealthAndDrive/App.xaml.cs" Line="56" Column="1" />
+      <File FileName="NuGet.Config" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="HealthAndDrive" expanded="True">
-            <Node name="HealthAndDrive" expanded="True">
-              <Node name="Models" expanded="True" />
-              <Node name="Protocol" expanded="True" />
-              <Node name="Repositories" expanded="True" />
-              <Node name="Services" expanded="True" />
-              <Node name="Tools" expanded="True" />
-              <Node name="ViewModels" expanded="True" />
-              <Node name="App.xaml" expanded="True">
-                <Node name="App.xaml.cs" selected="True" />
-              </Node>
-            </Node>
-            <Node name="HealthAndDrive.Android" expanded="True">
-              <Node name="Services" expanded="True" />
+            <Node name="Solution Items" expanded="True">
+              <Node name="/Users/bahamadououry/Desktop/Health_Drive/GitHub/Health-Drive-Technoligies/Android_App/H&amp;D-DSD-Sources-20202407_Bluetooth/NuGet.Config" selected="True" />
             </Node>
           </Node>
         </State>
